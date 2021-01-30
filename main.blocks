@@ -1,0 +1,95 @@
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable type="KIND_SpriteKind" id="2_L.vYTT(FR=O_.)VDj{">Goat</variable><variable type="KIND_SpriteKind" id="grf.i|dAcM,K_!l./~*2">StackGoat</variable><variable id="*Hv:t$v7+AbsI{~r[k8u">newGoat2</variable><variable id="Z(31;5:sGW9/[OTKOS3Z">newGoat</variable><variable id="3FZcd!N6oRS61kBj/9|c">goatImgs</variable><variable id="#i7im-YWPpJEmO^B+Gk,">baseGoat</variable></variables><block type="keyonevent" x="10" y="10"><field name="button">controller.A</field><field name="event">ControllerButtonEvent.Pressed</field><statement name="HANDLER"><block type="Sprite_blockCombine_set"><field name="property">Sprite.vx@set</field><value name="mySprite"><block type="variables_get"><field name="VAR" id="*Hv:t$v7+AbsI{~r[k8u">newGoat2</field></block></value><value name="value"><shadow type="math_number"><field name="NUM">0</field></shadow></value><next><block type="Sprite_blockCombine_set"><field name="property">Sprite.ay@set</field><value name="mySprite"><block type="variables_get"><field name="VAR" id="*Hv:t$v7+AbsI{~r[k8u">newGoat2</field></block></value><value name="value"><shadow type="math_number"><field name="NUM">300</field></shadow></value></block></next></block></statement></block><block type="function_definition" x="10" y="10"><mutation name="createNewGoat" functionid="QU!a8[f$W@I[9#Rq5+=k"/><field name="function_name">createNewGoat</field><statement name="STACK"><block type="variables_set"><field name="VAR" id="Z(31;5:sGW9/[OTKOS3Z">newGoat</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate"><value name="img"><shadow type="screen_image_picker"/><block type="lists_index_get"><value name="LIST"><block type="variables_get"><field name="VAR" id="3FZcd!N6oRS61kBj/9|c">goatImgs</field></block></value><value name="INDEX"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="device_random"><value name="min"><shadow type="math_number"><field name="NUM">0</field></shadow></value><value name="limit"><block type="math_arithmetic"><field name="OP">MINUS</field><value name="A"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="lists_length"><value name="VALUE"><block type="variables_get"><field name="VAR" id="3FZcd!N6oRS61kBj/9|c">goatImgs</field></block></value></block></value><value name="B"><shadow type="math_number"><field name="NUM">1</field></shadow></value></block></value></block></value></block></value><value name="kind"><shadow type="spritekind"><field name="MEMBER">Goat</field></shadow></value></block></value><next><block type="spritesetpos"><value name="sprite"><block type="variables_get"><field name="VAR" id="Z(31;5:sGW9/[OTKOS3Z">newGoat</field></block></value><value name="x"><shadow type="positionPicker"/><block type="device_random"><value name="min"><shadow type="math_number"><field name="NUM">20</field></shadow></value><value name="limit"><shadow type="math_number"><field name="NUM">140</field></shadow></value></block></value><value name="y"><shadow type="positionPicker"/><block type="math_arithmetic"><field name="OP">MINUS</field><value name="A"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="Sprite_blockCombine_get"><field name="property">Sprite.y</field><value name="mySprite"><block type="variables_get"><field name="VAR" id="#i7im-YWPpJEmO^B+Gk,">baseGoat</field></block></value></block></value><value name="B"><shadow type="math_number"><field name="NUM">20</field></shadow></value></block></value><next><block type="controls_if"><mutation else="1"/><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="percentchance"><value name="percentage"><shadow type="math_number_minmax"><mutation min="0" max="Infinity" label="Number" precision="0"/><field name="SLIDER">50</field></shadow></value></block></value><statement name="DO0"><block type="Sprite_blockCombine_set"><field name="property">Sprite.vx@set</field><value name="mySprite"><block type="variables_get"><field name="VAR" id="Z(31;5:sGW9/[OTKOS3Z">newGoat</field></block></value><value name="value"><block type="device_random"><value name="min"><shadow type="math_number"><field name="NUM">50</field></shadow></value><value name="limit"><shadow type="math_number"><field name="NUM">100</field></shadow></value></block></value></block></statement><statement name="ELSE"><block type="Sprite_blockCombine_set"><field name="property">Sprite.vx@set</field><value name="mySprite"><block type="variables_get"><field name="VAR" id="Z(31;5:sGW9/[OTKOS3Z">newGoat</field></block></value><value name="value"><block type="device_random"><value name="min"><shadow type="math_number"><field name="NUM">-100</field></shadow></value><value name="limit"><shadow type="math_number"><field name="NUM">-50</field></shadow></value></block></value></block></statement><next><block type="spritesetsetflag"><field name="flag">SpriteFlag.BounceOnWall</field><value name="sprite"><block type="variables_get"><field name="VAR" id="Z(31;5:sGW9/[OTKOS3Z">newGoat</field></block></value><value name="on"><shadow type="toggleOnOff"><field name="on">true</field></shadow></value></block></next></block></next></block></next></block></statement></block><block type="pxt-on-start" x="10" y="10"><statement name="HANDLER"><block type="variables_set"><field name="VAR" id="3FZcd!N6oRS61kBj/9|c">goatImgs</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="lists_create_with" inline="false"><mutation items="6"/><value name="ADD0"><block type="screen_image_picker"><field name="img">img`
+. . . . . . . . . . . . f e e . 
+. . . . . . . . . . . . . e e . 
+. . . . . . . . . . . . d c d c 
+. . . . . . . . . . . . d d d d 
+e d d d d d d d d d d d d a d d 
+. d d d d d d d d d d d d d a a 
+. d d d d d d d d d d d d . . . 
+. d d d d d d d d d d d d . . . 
+. . d d d d d d d d d d . . . . 
+. . . d . d . . d . d . . . . . 
+. . . d . d . . d . d . . . . . 
+. . . e . e . . e . e . . . . . 
+`</field><data>{"commentRefs":[],"fieldData":{"img":"myImages.image7"}}</data></block></value><value name="ADD1"><block type="screen_image_picker"><field name="img">img`
+. . . . f f . . . . . . . . . . . . . 
+. . d f f d f . . . . . . . . . . . . 
+. 4 4 4 4 4 4 4 . . . . . . . . . . . 
+. . 1 4 4 1 . . . . . . . . . . . . . 
+. 4 4 4 4 4 4 . . . . . . . . . . . . 
+. 4 4 4 4 4 4 . . . . . . . . . . . . 
+4 4 4 2 4 4 4 4 4 4 4 4 4 4 4 4 4 . . 
+. 4 2 2 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+. . 2 . . 4 4 4 4 4 4 4 4 4 4 4 4 4 . 
+. . . . . 4 4 4 4 4 4 4 4 4 4 4 4 4 . 
+. . . . . 4 2 4 2 2 2 2 2 2 2 2 2 . . 
+. . . . . 4 . 4 . . . . . 2 . 4 . . . 
+. . . . . 4 . 4 . . . . . 2 . 4 . . . 
+. . . . . 4 . 4 . . . . . 2 . 4 . . . 
+`</field><data>{"commentRefs":[],"fieldData":{"img":"myImages.image8"}}</data></block></value><value name="ADD2"><block type="screen_image_picker"><field name="img">img`
+. . . . . . . . b b d . . d d b . . . 
+. . . . . . . . b b b b b b b b . . . 
+. . . . . . . . . b b d b b d . . . . 
+. . . . . . . . . . b b b b b c . . . 
+. b . . . . . . . b b b b b b b . . . 
+. b . . . . b b b b b b b b b b . . . 
+. c b b b b b b b b b b . . . . . . . 
+. c b b b b b b b b b b . . . . . . . 
+. . c b b b b b b b b b . . . . . . . 
+. . c c b b b b b b b c . . . . . . . 
+. . c c c c c c c c c c . . . . . . . 
+. . c . b . . . c c c c . . . . . . . 
+. . c . b . . . . b . c . . . . . . . 
+. . c . b . . . . b . c . . . . . . . 
+`</field><data>{"commentRefs":[],"fieldData":{"img":"myImages.image9"}}</data></block></value><value name="ADD3"><block type="screen_image_picker"><field name="img">img`
+. . . . . . . . . . . . e . . e . . . 
+. . . . . . . . . . . e e e e e e . . 
+. . . . . . . . . . e e e e e e e e . 
+. . . . . . . . . e e e e c c c e e e 
+. . . . . . . . . . . . c c b c . . . 
+. . . c c c c c c c c c c f b f c . . 
+. . c c b b b b b b b b b f b f . . . 
+. . c b b b c c c b b b b b b c . . . 
+. c c b b c b b b b b b f b b c . . . 
+c c b b c b b b b b b b b f f f . . . 
+c b b b b b b b b b b b c c c . . . . 
+c c c c c c c c c c c c c . . . . . . 
+. . . . c . c . . . c . c . . . . . . 
+. . . . c . c . . . c . c . . . . . . 
+`</field><data>{"commentRefs":[],"fieldData":{"img":"myImages.image10"}}</data></block></value><value name="ADD4"><block type="screen_image_picker"><field name="img">img`
+. . . 1 . . . . . . . . . . . . . . 
+. . 1 c c c . . . . . . . . . . . . 
+. 1 1 1 1 c c . . . . . . . . . . 1 
+1 1 f 1 c 1 c c . . . . . . . . . 1 
+1 1 1 c 1 1 c c 1 1 1 1 1 1 1 1 1 1 
+1 1 1 c c c c 1 1 1 1 1 1 1 1 1 1 . 
+. . . 1 c c 1 1 1 1 1 1 1 1 1 1 1 . 
+. . . . 1 1 1 1 1 1 1 1 1 1 1 1 1 . 
+. . . . 1 1 1 1 1 1 1 1 1 1 1 1 1 . 
+. . . . 1 1 1 1 1 1 1 1 1 1 1 1 1 . 
+. . . . 1 1 1 1 1 1 1 1 1 1 1 1 1 . 
+. . . . 1 . 1 . . . . . . . 1 . 1 . 
+. . . . 1 . 1 . . . . . . . 1 . 1 . 
+. . . . 1 . 1 . . . . . . . 1 . 1 . 
+. . . . 1 . 1 . . . . . . . 1 . 1 . 
+. . . . c . c . . . . . . . c . c . 
+`</field><data>{"commentRefs":[],"fieldData":{"img":"myImages.image11"}}</data></block></value><value name="ADD5"><block type="screen_image_picker"><field name="img">img`
+.........................
+ff.............ff...ff...
+.ff............ffffff....
+..ff............ff2f2ffff
+...f............fffffffff
+...f............ffffff...
+...ff2f2ffffffffffffff...
+....f2f22fffffffff.......
+....f2ff2fffffffff.......
+....ff22ffffffffff.......
+....ffffffffffffff.......
+....fffffffff222ff.......
+....ffffffff2ff2ff.......
+....ffffffff22f2ff.......
+....fffffffff222f........
+.....f...f...f..f........
+.....f...f...f..f........
+.....f...f...f..f........
+`</field><data>{"commentRefs":[],"fieldData":{"img":"myImages.image12"}}</data></block></value></block></value><next><block type="gamesetbackgroundcolor"><value name="color"><shadow type="colorindexpicker"><field name="index">9</field></shadow></value><next><block type="tilemap_editor"><field name="tilemap">tilemap`level`</field><data>{"commentRefs":[],"fieldData":{"tilemap":"level"}}</data><next><block type="variables_set"><field name="VAR" id="#i7im-YWPpJEmO^B+Gk,">baseGoat</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate"><value name="img"><shadow type="screen_image_picker"/><block type="lists_index_get"><value name="LIST"><block type="variables_get"><field name="VAR" id="3FZcd!N6oRS61kBj/9|c">goatImgs</field></block></value><value name="INDEX"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="device_random"><value name="min"><shadow type="math_number"><field name="NUM">0</field></shadow></value><value name="limit"><block type="math_arithmetic"><field name="OP">MINUS</field><value name="A"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="lists_length"><value name="VALUE"><block type="variables_get"><field name="VAR" id="3FZcd!N6oRS61kBj/9|c">goatImgs</field></block></value></block></value><value name="B"><shadow type="math_number"><field name="NUM">1</field></shadow></value></block></value></block></value></block></value><value name="kind"><shadow type="spritekind"><field name="MEMBER">StackGoat</field></shadow></value></block></value><next><block type="spritesetpos"><value name="sprite"><block type="variables_get"><field name="VAR" id="#i7im-YWPpJEmO^B+Gk,">baseGoat</field></block></value><value name="x"><shadow type="positionPicker"><field name="index">80</field></shadow></value><value name="y"><shadow type="positionPicker"><field name="index">600</field></shadow></value><next><block type="Sprite_blockCombine_set"><field name="property">Sprite.ay@set</field><value name="mySprite"><block type="variables_get"><field name="VAR" id="#i7im-YWPpJEmO^B+Gk,">baseGoat</field></block></value><value name="value"><shadow type="math_number"><field name="NUM">300</field></shadow></value><next><block type="camerafollow"><value name="sprite"><shadow type="variables_get"><field name="VAR" id="#i7im-YWPpJEmO^B+Gk,">baseGoat</field></shadow></value><next><block type="function_call"><mutation name="createNewGoat" functionid="QU!a8[f$W@I[9#Rq5+=k"/></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></statement></block></xml>
